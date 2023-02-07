@@ -1,0 +1,57 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.4.33213.308
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Blaztrap.Extensions.AsyncHolder", "Blaztrap.Extensions.AsyncHolder\Blaztrap.Extensions.AsyncHolder.csproj", "{ABF71555-1CC5-4BF1-A85A-5C7B1830DF1C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Blaztrap.Controls.Async", "Blaztrap.Controls.Async\Blaztrap.Controls.Async.csproj", "{74675045-7F0B-4834-AD88-FEB7315FB86E}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Extensions", "Extensions", "{8967578E-170C-424F-A6B2-E7126E63FB88}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Controls", "Controls", "{2B8C9F72-28D6-4199-B9B2-1817132FA456}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Extensibility", "Extensibility", "{C58C2214-95C8-4612-B4D8-9293CD992047}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Blaztrap.Controls.Surface", "Blaztrap.Controls.Surface\Blaztrap.Controls.Surface.csproj", "{65EF41F7-CE0C-4DE6-8EC0-772FCAC9DA7C}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Core", "Core", "{70FAADED-6876-472A-A63E-44D7B7BC6ACB}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Blaztrap.Abstractions", "Blaztrap.Abstractions\Blaztrap.Abstractions.csproj", "{8C4641E5-1E5E-4BB2-A5EE-9268F4882DAA}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{ABF71555-1CC5-4BF1-A85A-5C7B1830DF1C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{ABF71555-1CC5-4BF1-A85A-5C7B1830DF1C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{ABF71555-1CC5-4BF1-A85A-5C7B1830DF1C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{ABF71555-1CC5-4BF1-A85A-5C7B1830DF1C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{74675045-7F0B-4834-AD88-FEB7315FB86E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{74675045-7F0B-4834-AD88-FEB7315FB86E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{74675045-7F0B-4834-AD88-FEB7315FB86E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{74675045-7F0B-4834-AD88-FEB7315FB86E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{65EF41F7-CE0C-4DE6-8EC0-772FCAC9DA7C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{65EF41F7-CE0C-4DE6-8EC0-772FCAC9DA7C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{65EF41F7-CE0C-4DE6-8EC0-772FCAC9DA7C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{65EF41F7-CE0C-4DE6-8EC0-772FCAC9DA7C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8C4641E5-1E5E-4BB2-A5EE-9268F4882DAA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8C4641E5-1E5E-4BB2-A5EE-9268F4882DAA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8C4641E5-1E5E-4BB2-A5EE-9268F4882DAA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8C4641E5-1E5E-4BB2-A5EE-9268F4882DAA}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{ABF71555-1CC5-4BF1-A85A-5C7B1830DF1C} = {8967578E-170C-424F-A6B2-E7126E63FB88}
+		{74675045-7F0B-4834-AD88-FEB7315FB86E} = {2B8C9F72-28D6-4199-B9B2-1817132FA456}
+		{65EF41F7-CE0C-4DE6-8EC0-772FCAC9DA7C} = {2B8C9F72-28D6-4199-B9B2-1817132FA456}
+		{8C4641E5-1E5E-4BB2-A5EE-9268F4882DAA} = {C58C2214-95C8-4612-B4D8-9293CD992047}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {3BAFD38C-71B8-4269-BB17-12CE834247A3}
+	EndGlobalSection
+EndGlobal

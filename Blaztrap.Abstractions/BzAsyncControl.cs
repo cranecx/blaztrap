@@ -25,11 +25,6 @@ public abstract class BzAsyncControl : BzControl
         }
     }
 
-    public BzAsyncControl()
-    {
-        InputAttributes = new();
-    }
-
     protected override void OnInitialized()
     {
         AsyncHolder!.OnChange += AsyncHolderOnChange;

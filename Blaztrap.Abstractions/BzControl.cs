@@ -4,8 +4,8 @@ using Microsoft.JSInterop;
 namespace Blaztrap.Abstractions;
 public abstract class BzControl : ComponentBase
 {
-    protected IJSObjectReference? _module;
-    protected ElementReference _element;
+    protected IJSObjectReference? Module { get; set; }
+    protected ElementReference Element { get; set; }
 
     public BzControl()
     {

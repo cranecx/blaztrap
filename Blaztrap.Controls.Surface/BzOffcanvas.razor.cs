@@ -14,18 +14,18 @@ public partial class BzOffcanvas
     {
         if (firstRender)
         {
-            _module = await JS!.InvokeAsync<IJSObjectReference>(
+            Module = await JS!.InvokeAsync<IJSObjectReference>(
                 "import", "./_content/Pronostikapp.Express.Blazor.Controls/Offcanvas.js");
         }
     }
 
     public async Task Show()
     {
-        await _module!.InvokeVoidAsync("showOffcanvas", _element);
+        await Module!.InvokeVoidAsync("showOffcanvas", Element);
     }
     public async Task Hide()
     {
-        await _module!.InvokeVoidAsync("hideOffcanvas", _element);
+        await Module!.InvokeVoidAsync("hideOffcanvas", Element);
     }
 
 }

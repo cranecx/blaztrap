@@ -2,7 +2,7 @@
 
 namespace Blaztrap.Controls;
 
-public partial class AsyncSelect<TItem>
+public partial class BzSelect<TItem>
     {
         [Parameter]
         public IEnumerable<TItem> Items { get; set; }
@@ -25,7 +25,7 @@ public partial class AsyncSelect<TItem>
         [Parameter]
         public EventCallback<string?> ValueChanged { get; set; }
 
-        public AsyncSelect()
+        public BzSelect()
         {
             Items = Enumerable.Empty<TItem>();
             ValueSelector = (item) => item?.ToString();

@@ -2,7 +2,7 @@
 
 namespace Blaztrap.Controls;
 
-public partial class AsyncButton
+public partial class BzButton
 {
     [Parameter]
     public string? Text { get; set; }

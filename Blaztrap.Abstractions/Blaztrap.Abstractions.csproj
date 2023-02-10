@@ -11,4 +11,8 @@
     <PackageReference Include="Microsoft.JSInterop" Version="6.0.11" />
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\Blaztrap.Extensions.AsyncHolder\Blaztrap.Extensions.AsyncHolder.csproj" />
+  </ItemGroup>
+
 </Project>

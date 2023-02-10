@@ -9,14 +9,14 @@ public abstract class BzControl : ComponentBase
 
     public BzControl()
     {
-        AdditionalAttributes = new Dictionary<string, object>();
+        InputAttributes = new Dictionary<string, object>();
     }
 
     [Inject]
     public IJSRuntime? JS { get; set; }
 
     [Parameter(CaptureUnmatchedValues = true)]
-    public Dictionary<string, object> AdditionalAttributes { get; set; }
+    public Dictionary<string, object> InputAttributes { get; set; }
 
     private bool _enabled = true;
 

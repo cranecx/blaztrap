@@ -1,15 +1,12 @@
 ﻿using Blaztrap.Extensions;
 using Microsoft.AspNetCore.Components;
 
-namespace Blaztrap.Controls;
+namespace Blaztrap.Abstractions;
 
-public abstract class AsyncControl : ComponentBase
+public abstract class BzAsyncControl : BzControl
 {
     [Parameter]
     public string? OperationsFilter { get; set; }
-
-    [Parameter(CaptureUnmatchedValues = true)]
-    public Dictionary<string, object> InputAttributes { get; set; }
 
     [Inject]
     public IAsyncHolderService? AsyncHolder { get; set; }
@@ -28,7 +25,7 @@ public abstract class AsyncControl : ComponentBase
         }
     }
 
-    public AsyncControl()
+    public BzAsyncControl()
     {
         InputAttributes = new();
     }

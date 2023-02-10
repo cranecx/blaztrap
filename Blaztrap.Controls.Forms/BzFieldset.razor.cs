@@ -2,7 +2,7 @@
 
 namespace Blaztrap.Controls;
 
-    public partial class AsyncFieldset
+    public partial class BzFieldset
     {
 
         [Parameter]

@@ -2,7 +2,7 @@
 using Microsoft.JSInterop;
 
 namespace Blaztrap.Controls;
-public partial class Offcanvas
+public partial class BzOffcanvas
 {
     [Parameter]
     public string? Title {  get; set; }

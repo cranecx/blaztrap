@@ -45,9 +45,16 @@ public static class BzParser
             }
         }
 
-
-        
-
         return attributes;
+    }
+
+    public static Dictionary<string, object> ParseAttributes(Dictionary<string, object> existingAttributes, params object[] targets)
+    {
+        var additional = ParseAttributes(targets);
+        var composedAttributes = existingAttributes
+            .Concat(additional)
+            .ToDictionary(d => d.Key, d => d.Value);
+
+        return composedAttributes;
     }
 }

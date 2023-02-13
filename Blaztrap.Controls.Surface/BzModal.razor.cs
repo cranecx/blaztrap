@@ -1,18 +1,19 @@
-﻿using Microsoft.AspNetCore.Components;
+﻿using Blaztrap.Abstractions;
+using Microsoft.AspNetCore.Components;
 using Microsoft.JSInterop;
 
 namespace Blaztrap.Controls;
 
 public partial class BzModal
 {
-    [Parameter]
-    public RenderFragment? Header { get; set; }
+	[Parameter]
+	public RenderFragment? Header { get; set; }
 
-    [Parameter]
-    public RenderFragment? Body { get; set; }
+	[Parameter]
+	public RenderFragment? Body { get; set; }
 
-    [Parameter]
-    public RenderFragment? Footer { get; set; }
+	[Parameter]
+	public RenderFragment? Footer { get; set; }
 
 	[Parameter]
 	public bool Scrollable { get; set; }
@@ -20,7 +21,13 @@ public partial class BzModal
 	[Parameter]
 	public BzModalSize Size { get; set; }
 
-	[Parameter]
+    [Parameter]
+    public BzBackdropStyle BackdropStyle { get; set; }
+
+    [Parameter]
+    public BzKeyboardBehavior KeyboardBehavior { get; set; }
+
+    [Parameter]
 	public BzModalFullScreenBehavior FullScreenBehavior { get; set; }
 
 	protected override async Task OnAfterRenderAsync(bool firstRender)

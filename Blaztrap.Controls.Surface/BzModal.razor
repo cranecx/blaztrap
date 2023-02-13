@@ -1,7 +1,7 @@
 ﻿@namespace Blaztrap.Controls
 @inherits BzControl
 
-<div class="modal" tabindex="-1" @ref="Element" @attributes="InputAttributes">
+<div class="modal" tabindex="-1" @ref="Element" @attributes="BzParser.ParseAttributes(InputAttributes, BackdropStyle, KeyboardBehavior)">
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header">

@@ -10,12 +10,13 @@ public partial class BzOffcanvas
     [Parameter]
     public RenderFragment? ChildContent {  get; set; }
 
-    protected override async Task OnAfterRenderAsync(bool firstRender)
+
+	protected override async Task OnAfterRenderAsync(bool firstRender)
     {
         if (firstRender)
         {
             Module = await JS!.InvokeAsync<IJSObjectReference>(
-                "import", "./_content/Pronostikapp.Express.Blazor.Controls/Offcanvas.js");
+                "import", "./_content/Blaztrap.Controls.Surface/Offcanvas.js");
         }
     }
 

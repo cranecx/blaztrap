@@ -1,6 +1,6 @@
 ﻿namespace Blaztrap.Abstractions;
 
-public enum BzKeyboardBehavior
+public enum BzKeyboard
 {
     Default = 0,
 

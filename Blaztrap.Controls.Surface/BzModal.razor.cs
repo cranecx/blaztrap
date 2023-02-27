@@ -22,13 +22,13 @@ public partial class BzModal
 	public BzModalSize Size { get; set; }
 
     [Parameter]
-    public BzBackdropStyle BackdropStyle { get; set; }
+    public BzBackdrop Backdrop { get; set; }
 
     [Parameter]
-    public BzKeyboardBehavior KeyboardBehavior { get; set; }
+    public BzKeyboard Keyboard { get; set; }
 
     [Parameter]
-	public BzModalFullScreenBehavior FullScreenBehavior { get; set; }
+	public BzModalFullScreen FullScreen { get; set; }
 
 	protected override async Task OnAfterRenderAsync(bool firstRender)
 	{

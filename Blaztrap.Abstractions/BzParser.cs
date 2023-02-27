@@ -1,23 +1,66 @@
-﻿using System.Text;
+﻿using System.IO;
+using System.Linq.Expressions;
+using System.Reflection;
+using System.Text;
 
 namespace Blaztrap.Abstractions;
 
 public static class BzParser
 {
+    public static string ParseClasess<TTarget>(this TTarget _, params Expression<Func<TTarget>>[] expressions)
+        where TTarget : BzControl
+    {
+        var sb = new StringBuilder();
+        foreach (var expression in expressions)
+        {
+            var targetProperty = ((MemberExpression)expression.Body).Member as PropertyInfo 
+                ?? throw new InvalidOperationException("A property is required.");
+
+            var propertyAttributes = targetProperty
+                .GetCustomAttributes(false)
+                .OfType<BzClassAttribute>();
+
+            foreach (var attribute in propertyAttributes)
+            {
+                sb.Append($"{attribute.Classes} ");
+            }
+        }
+
+        return sb.ToString();
+    }
+
+    public static Dictionary<string, object> ParseAttributes<TTarget>(this TTarget _, params Expression<Func<TTarget>>[] expressions)
+        where TTarget : BzControl
+    {
+        var attributes = new Dictionary<string, object>();
+        foreach (var expression in expressions)
+        {
+            var targetProperty = ((MemberExpression)expression.Body).Member as PropertyInfo
+                ?? throw new InvalidOperationException("A property is required.");
+
+            var propertyAttributes = targetProperty.GetCustomAttributes(false).OfType<BzAttributeAttribute>();
+            foreach (var attribute in propertyAttributes)
+            {
+                attributes.Add(attribute.Name, attribute.Value);
+            }
+        }
+
+        return attributes;
+    }
+
     public static string ParseClasses(params object[] targets)
     {
         var sb = new StringBuilder();
 
         foreach (object target in targets)
         {
+            if (target is null) continue;
             var targetType = target.GetType();
-            var propertyAttributes = targetType.GetProperties()
-                .SelectMany(p => p.GetCustomAttributes(false).OfType<BzClassAttribute>());
+            var targetField = targetType.GetField(target.ToString()!);
+            if (targetField is null) continue;
+            var fieldAttributes = targetField.GetCustomAttributes(false).OfType<BzClassAttribute>();
 
-            var fieldAttributes = targetType.GetFields()
-                .SelectMany(f => f.GetCustomAttributes(false).OfType<BzClassAttribute>());
-
-            foreach (var attribute in propertyAttributes.Union(fieldAttributes))
+            foreach (var attribute in fieldAttributes)
             {
                 sb.Append($"{attribute.Classes} ");
             }
@@ -32,14 +75,13 @@ public static class BzParser
 
         foreach (object target in targets)
         {
+            if(target is null) continue;
             var targetType = target.GetType();
-            var propertyAttributes = targetType.GetProperties()
-                .SelectMany(p => p.GetCustomAttributes(false).OfType<BzAttributeAttribute>());
+            var targetField = targetType.GetField(target.ToString()!);
+            if (targetField is null) continue;
+            var fieldAttributes = targetField.GetCustomAttributes(false).OfType<BzAttributeAttribute>();
 
-            var fieldAttributes = targetType.GetFields()
-                .SelectMany(f => f.GetCustomAttributes(false).OfType<BzAttributeAttribute>());
-
-            foreach (var attribute in propertyAttributes.Union(fieldAttributes))
+            foreach (var attribute in fieldAttributes)
             {
                 attributes.Add(attribute.Name, attribute.Value);
             }

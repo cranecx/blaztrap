@@ -2,7 +2,7 @@
 
 namespace Blaztrap.Controls;
 
-public enum BzModalFullScreenBehavior
+public enum BzModalFullScreen
 {
     None = 0,
 

@@ -1,6 +1,6 @@
 ﻿namespace Blaztrap.Abstractions;
 
-public enum BzBackdropStyle
+public enum BzBackdrop
 {
     Default = 0,
 
